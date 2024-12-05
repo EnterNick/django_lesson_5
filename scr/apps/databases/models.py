@@ -6,7 +6,7 @@ from datetime import datetime
 
 class Post(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     likes = models.IntegerField(default=0)
     date_created = models.DateTimeField(default=datetime.today())

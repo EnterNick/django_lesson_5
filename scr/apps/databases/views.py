@@ -43,5 +43,11 @@ class PostsView(ListView):
 class PostView(DetailView):
     queryset = Post.objects.all()
 
+    def post(self, request, pk):
+        post = Post.objects.get(pk=pk)
+        post.likes += 1
+        post.save()
+        return self.get(request, pk=pk)
+
     def get_context_data(self, **kwargs):
         return {**super().get_context_data(**kwargs), 'comments': Comments.objects.filter(post_id=self.kwargs['pk'])}

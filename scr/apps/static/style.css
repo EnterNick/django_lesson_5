@@ -81,8 +81,9 @@ a {
   transform: scale(1.1);
 }
 .post__wrapper {
-  display: grid;
+  display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
 }
 .post__under-block {
@@ -123,4 +124,23 @@ a {
 }
 .post__comments_comment-content {
   font-size: 14px;
+}
+.post__btn {
+  color: #fff;
+  font-size: 12px;
+  background-color: #130e69;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.like {
+  justify-self: right;
+  margin-left: auto;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+.like__form {
+  display: flex;
 }

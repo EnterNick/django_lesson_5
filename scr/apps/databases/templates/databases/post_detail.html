@@ -9,7 +9,10 @@
         <p class="post__author">{{object.author.username}}</p>
         <p class="post__date">{{object.date_created}}</p>
     </div>
-
+    <form action="" method="post" class="like__form">
+        {% csrf_token %}
+        <button type="submit" class="like">👍🏻</button>
+    </form>
     <div class="post__comments">
         {% for comment in comments %}
             <div class="post__comments_comment">
@@ -18,5 +21,6 @@
             </div>
         {% endfor %}
     </div>
+    <a href="{% url 'comment' post.id %}" class="post__btn">Leave comment</a>
 </div>
 {% endblock %}
